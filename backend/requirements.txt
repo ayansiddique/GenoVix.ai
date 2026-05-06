@@ -1,0 +1,28 @@
+# ── Core API framework ────────────────────────────────────────────────────────
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+pydantic>=2.0.0
+
+# ── Static file serving ───────────────────────────────────────────────────────
+aiofiles>=23.0.0
+
+# ── Stable Diffusion XL pipeline ─────────────────────────────────────────────
+diffusers>=0.27.0
+transformers>=4.40.0
+accelerate>=0.30.0
+safetensors>=0.4.3
+
+# ── Image I/O ─────────────────────────────────────────────────────────────────
+Pillow>=10.3.0
+
+# ── GPU memory optimisation (optional but recommended for VRAM-limited cards) ─
+# Install xformers separately matching your CUDA version if needed:
+#   pip install xformers
+# Uncomment the line below if you want pip to try to resolve it automatically:
+# xformers
+
+# ── PyTorch (CPU fallback — replace with CUDA wheel if you have a GPU) ────────
+# GPU users: follow https://pytorch.org/get-started/locally/ for their CUDA wheel
+# e.g.  pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+torch>=2.2.0
+torchvision>=0.17.0

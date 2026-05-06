@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #020804;
+  --foreground: #ffffff;
+  --pak-green: #01411C;
+  --neon-green: #39FF14;
+  --glass: rgba(255, 255, 255, 0.02);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Islamic Geometric Pattern Overlay */
+.islamic-bg {
+  background-image: radial-gradient(var(--pak-green) 0.5px, transparent 0.5px);
+  background-size: 30px 30px;
+  opacity: 0.1;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Custom Gradients */
+.bg-pak-mesh {
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(1, 65, 28, 0.2) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(57, 255, 20, 0.1) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(1, 65, 28, 0.15) 0px, transparent 50%);
+}
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
+}
+
+.glow-green-strong {
+  box-shadow: 0 0 30px rgba(57, 255, 20, 0.4);
+}
+
+.glass-morphism {
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+}
+
+/* Skeleton Loading Animation */
+.skeleton {
+  background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+.font-urdu {
+  font-family: var(--font-noto-urdu), serif;
+}
+
+@layer utilities {
+  .animate-gradient {
+    background-size: 200% auto;
+    animation: gradient 8s linear infinite;
+  }
+}
+
+@keyframes gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
